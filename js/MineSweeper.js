@@ -184,7 +184,8 @@ jQuery(function ($) {
         let targ = $(ev.target);
         if (
           (ev.which === LEFT_MOUSE_BUTTON && msObj.RIGHT_MOUSE_DOWN) ||
-          (ev.which === RIGHT_MOUSE_BUTTON && msObj.LEFT_MOUSE_DOWN)
+          (ev.which === RIGHT_MOUSE_BUTTON && msObj.LEFT_MOUSE_DOWN) ||
+          ((ev.which === LEFT_MOUSE_BUTTON || msObj.LEFT_MOUSE_DOWN) && msObj.MODIFIER_KEY_DOWN)
         ) {
           // This occurs when player is holding BOTH the left and right mouse buttons down simultaneously
           let x = targ.attr('data-x') - 1;
